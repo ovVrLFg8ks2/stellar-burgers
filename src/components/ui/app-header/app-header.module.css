@@ -16,8 +16,9 @@
 
 .link {
   display: flex;
-  text-decoration: none;
   color: var(--text-inactive-color);
+  border: none;
+  text-decoration: none;
 }
 
 .link_active {
