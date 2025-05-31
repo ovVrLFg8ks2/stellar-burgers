@@ -28,7 +28,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
       constructorItems.bun.name &&
       constructorItems.bun.price &&
       constructorItems.bun.image ? (
-        <div className={`${styles.element} mb-4 mr-4`}>
+        <div data-testid='bunElemTop' className={`${styles.element} mb-4 mr-4`}>
           <ConstructorElement
             type='top'
             isLocked
@@ -39,12 +39,13 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         </div>
       ) : (
         <div
+          data-testid='bunElemTop'
           className={`${styles.noBuns} ${styles.noBunsTop} ml-8 mb-4 mr-5 text text_type_main-default`}
         >
           Выберите булки
         </div>
       )}
-      <ul className={styles.elements}>
+      <ul data-testid='fillingElem' className={styles.elements}>
         {constructorItems.ingredients.length > 0 ? (
           constructorItems.ingredients.map(
             (item: TConstructorIngredient, index: number) => (
@@ -58,6 +59,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
           )
         ) : (
           <div
+            data-testid='fillingElem'
             className={`${styles.noBuns} ml-8 mb-4 mr-5 text text_type_main-default`}
           >
             Выберите начинку
@@ -68,7 +70,10 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
       constructorItems.bun.name &&
       constructorItems.bun.price &&
       constructorItems.bun.image ? (
-        <div className={`${styles.element} mt-4 mr-4`}>
+        <div
+          data-testid='bunElemBottom'
+          className={`${styles.element} mt-4 mr-4`}
+        >
           <ConstructorElement
             type='bottom'
             isLocked
@@ -79,6 +84,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         </div>
       ) : (
         <div
+          data-testid='bunElemBottom'
           className={`${styles.noBuns} ${styles.noBunsBottom} ml-8 mb-4 mr-5 text text_type_main-default`}
         >
           Выберите булки

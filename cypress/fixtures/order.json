@@ -1,7 +1,9 @@
 {
   "success": true,
-  "name": "Бургер",
+  "name": "börgar",
   "order": {
+    "_id": "683b0410c2f30c001cb28e5e",
+    "status": "done",
     "number": 12345
   }
 } 
