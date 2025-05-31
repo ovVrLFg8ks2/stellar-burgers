@@ -1,15 +1,21 @@
-import { FC, memo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { FC, memo, SyntheticEvent } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { BurgerIngredientUI } from '@ui';
 import { TBurgerIngredientProps } from './type';
+import { TIngredient } from '@utils-types';
+import { useDispatch } from 'react-redux';
+import { addBun, addIngredient } from '@slices';
 
 export const BurgerIngredient: FC<TBurgerIngredientProps> = memo(
   ({ ingredient, count }) => {
+    const dispatch = useDispatch();
     const location = useLocation();
-
-    const handleAdd = () => {};
-
+    const params = useParams();
+    const handleAdd = (ingredient: TIngredient) => {
+      if (ingredient.type === 'bun') dispatch(addBun(ingredient));
+      else dispatch(addIngredient(ingredient));
+    };
     return (
       <BurgerIngredientUI
         ingredient={ingredient}
